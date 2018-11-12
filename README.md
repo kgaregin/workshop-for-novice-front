@@ -90,3 +90,55 @@ module.exports = {
 };
 ```
 
+#### step 3 - application core:
+
+now let's add some core application files:
+* index.html in project root folder, containing "div" with id = "root" and generated script "bundle.js" from dist 
+folder:
+```$html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
+```
+
+* src/index.jsx - app entry point file that will render our App component into div with "root" id:
+```$jsx
+import * as React from 'react';
+import {render} from 'react-dom';
+import {App} from './App'
+
+render(<App/>, document.getElementById('root'));
+``` 
+
+* App.jsx - file with App component:
+```$jsx
+import * as React from 'react';
+import './App.css';
+
+export class App extends React.Component {
+  render () {
+    return <div>Hello world</div>
+  }
+}
+```
+
+* App.css - for styles:
+```$css
+body {
+    margin: 0;
+}
+```
+
+FYI:
+* importing css available due to style-loader and css-loader in webpack configuration.
+* 
+
+#### We can now launch application by executing `npm run start` in console, it will be available at http://localhost:8080/
