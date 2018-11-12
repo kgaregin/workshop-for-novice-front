@@ -44,12 +44,15 @@ Babel lets you transpile modern JavaScript/JSX code and enable support for older
 ```$js
 const path = require("path");
 const webpack = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   // entry point for webpack builder to start process with application
   entry: "./src/index.jsx",
   // development | production mode presets
   mode: "development",
+  // source mappings
+  devtool: 'source-map',
   // set of rules for files preprocessing with loaders
   module: {
     rules: [
@@ -75,13 +78,15 @@ module.exports = {
   },
   // dev-server settings
   devServer: {
-    contentBase: path.join(__dirname, "dist/"),
     port: 8080,
-    publicPath: "http://localhost:3000/dist/",
     hotOnly: true
-  },
-  // plugins section
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  }, // plugins section
+  plugins: [
+    // clean directory before build
+    new CleanWebpackPlugin(['dist']),
+    // replacing modules in real time after updates
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
 ```
 
