@@ -1,5 +1,5 @@
 ## workshop-for-novice-front
-fast start developing frontend applications with Webpack and React
+fast start developing frontend applications with Webpack and React step-by-step
 
 #### step 1 - prepare environment:
 
