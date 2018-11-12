@@ -8,8 +8,7 @@ fast start developing frontend applications with Webpack and React
 * install React and Webpack with plugins and loaders: 
 
 ```$xslt
-npm i -D react react-dom webpack webpack-dev-server copy-webpack-plugin clean-webpack-plugin html-webpack-plugin source-map-loader babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader
-
+npm i -D react react-dom webpack webpack-cli webpack-dev-server copy-webpack-plugin clean-webpack-plugin html-webpack-plugin source-map-loader babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader
 npm i -g webpack-cli
 ``` 
 
